@@ -1,0 +1,13 @@
+{% extends "tutorialapp/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+   <p>{{ message }}</p>
+
+<ul>
+    {% for item in items %}
+        <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

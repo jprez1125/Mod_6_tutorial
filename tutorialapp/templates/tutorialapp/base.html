@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Module 6 Site{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'tutorialapp/style.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1>Module 6 Tutorial</h1>
+    </header>
+
+    <main class="content">
+        {% block content %}{% endblock %}
+    </main>
+
+  <footer>
+    <p>Module 6 Tutorial • Django Project </p>
+</footer>
+    
+</body>
+</html>

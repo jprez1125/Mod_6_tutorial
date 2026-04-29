@@ -1,0 +1,15 @@
+{% extends "tutorialapp/base.html" %}
+
+{% block content %}
+  <h2>Submit Your Name</h2>
+
+  <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Submit</button>
+  </form>
+
+  {% if submitted_name %}
+      <p>You submitted: {{ submitted_name }}</p>
+  {% endif %}
+{% endblock %}
