@@ -1,0 +1,29 @@
+{% extends "tutorialapp/base.html" %}
+
+{% block title %}Comments{% endblock %}
+
+{% block content %}
+<h2>Leave a Comment</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+<hr>
+
+<h2>Approved Comments</h2>
+
+<ul>
+    {% for c in comments %}
+        <li>
+            <strong>{{ c.name }}</strong>: {{ c.comment }}
+            <br>
+            <small>Posted on {{ c.created }}</small>
+        </li>
+    {% empty %}
+        <li>No comments yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

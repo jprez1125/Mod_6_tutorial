@@ -21,4 +21,7 @@ from tutorialapp import views
 urlpatterns = [
     path("", views.index, name="index"),
     path("form/", views.form_view, name="form"),
+    path("comments/", views.comments, name="comments"),
+    path ("about/",views.about, name="about"),
+    path("admin/", admin.site.urls),
 ]
